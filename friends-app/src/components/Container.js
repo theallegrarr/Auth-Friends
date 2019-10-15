@@ -34,12 +34,22 @@ export function Container(props) {
         <Route
           exact
           path='/friends'
-          component={Friends}
+          render={props => {
+            if (localStorage.getItem('token')) {
+              return <Friends {...props} />
+            }
+            return <Redirect to='/' />
+          }}
         />
         <Route
           exact
           path='/addfriend'
-          component={AddFriends}
+          render={props => {
+            if (localStorage.getItem('token')) {
+              return <AddFriends {...props} />
+            }
+            return <Redirect to='/' />
+          }}
         />
       </main>
     </div>

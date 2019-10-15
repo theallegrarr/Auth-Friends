@@ -20,3 +20,25 @@
 .App-link {
   color: #09d3ac;
 }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 800px;
+  margin: 1%;
+}
+
+a {
+  margin: 30px;
+}
+
+.friends {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+}
+
+.each-friend {
+  margin: 30px;
+}
