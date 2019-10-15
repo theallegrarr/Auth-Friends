@@ -3,12 +3,6 @@ import axios from 'axios';
 
 
 const token = localStorage.getItem('token');
-const headers = {
-  headers: {
-    'Content-Type': 'application/json',
-     authorization: token,
-  },
-};
 
 export default function AddFriend(props) {
   const ageref = useRef();
@@ -16,6 +10,7 @@ export default function AddFriend(props) {
   const emailref = useRef();
 
   const submit = () => {
+    console.log(token);
     axios({
       method: 'post',
       url: 'http://localhost:5000/api/friends',
